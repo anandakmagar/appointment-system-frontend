@@ -38,7 +38,7 @@ async function createUser(type) {
     let payload = {};
 
     if (type === 'client') {
-        apiUrl = 'http://security/auth/client/admin/create';
+        apiUrl = 'http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/client/admin/create';
         payload = {
             name: document.getElementById('clientName').value,
             email: document.getElementById('clientEmail').value,
@@ -51,7 +51,7 @@ async function createUser(type) {
             }
         };
     } else if (type === 'staff') {
-        apiUrl = 'http://security/auth/staff/admin/create';
+        apiUrl = 'http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin/create';
         payload = {
             name: document.getElementById('staffName').value,
             email: document.getElementById('staffEmail').value,
@@ -64,7 +64,7 @@ async function createUser(type) {
             }
         };
     } else if (type === 'admin') {
-        apiUrl = 'http://security/auth/admin/registerAdmin';
+        apiUrl = 'http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/admin/registerAdmin';
         payload = {
             name: document.getElementById('adminName').value,
             email: document.getElementById('adminEmail').value,

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadAppointmentTypes() {
     try {
-            const response = await fetch('http://security/auth/appointment/admin-staff/fetchAllAppointmentType', {
+            const response = await fetch('http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAllAppointmentType', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -49,7 +49,7 @@ async function loadAppointmentTypes() {
 
 async function loadAppointmentStatuses() {
     try {
-            const response = await fetch('http://security/auth/appointment/admin-staff/fetchAllAppointmentStatus', {
+            const response = await fetch('http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAllAppointmentStatus', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -77,7 +77,7 @@ async function loadAppointmentStatuses() {
 
 async function loadStaffList() {
     try {
-            const response = await fetch('http://security/auth/staff/admin-staff/fetchAllStaff', {
+            const response = await fetch('http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin-staff/fetchAllStaff', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -333,9 +333,9 @@ function displayStaffDetails(staff) {
 async function fetchAppointments(type, id) {
     let apiUrl = '';
     if (type === 'clientId') {
-        apiUrl = `http://security/auth/appointment/admin-staff/fetchByClientId?clientId=${id}`;
+        apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchByClientId?clientId=${id}`;
     } else if (type === 'staffId') {
-        apiUrl = `http://security/auth/appointment/admin-staff/fetchByStaffId?staffId=${id}`;
+        apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchByStaffId?staffId=${id}`;
     }
 
     try {
@@ -458,7 +458,7 @@ function showEditForm(type, id) {
 
 async function fetchClientDetails(clientId) {
     try {
-        const response = await fetch(`http://security/auth/client/admin-staff/fetch?clientId=${clientId}`, {
+        const response = await fetch(`http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/client/admin-staff/fetch?clientId=${clientId}`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -495,7 +495,7 @@ function populateClientEditForm(client) {
 
 async function fetchStaffDetails(staffId) {
     try {
-        const response = await fetch(`http://security/auth/staff/admin-staff/fetch?staffId=${staffId}`, {
+        const response = await fetch(`http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin-staff/fetch?staffId=${staffId}`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -553,55 +553,55 @@ async function fetchData() {
 
     if (dataType === 'client') {
         if (appointmentIdType === 'id') {
-            apiUrl = `http://security/auth/client/admin-staff/fetch?clientId=${dataId}`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/client/admin-staff/fetch?clientId=${dataId}`;
         } else if (appointmentIdType === 'email') {
-            apiUrl = `http://security/auth/client/admin-staff/fetchClientByEmail?email=${dataId}`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/client/admin-staff/fetchClientByEmail?email=${dataId}`;
         } else if (appointmentIdType === 'phone') {
-            apiUrl = `http://security/auth/client/admin-staff/fetchClientByPhoneNumber?phoneNumber=${dataId}`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/client/admin-staff/fetchClientByPhoneNumber?phoneNumber=${dataId}`;
         } else if (appointmentIdType === 'all') {
-            apiUrl = `http://security/auth/client/admin-staff/fetchAllClients`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/client/admin-staff/fetchAllClients`;
         }
         showCreateButton = true; // Show create button for client data
     } else if (dataType === 'staff') {
         if (appointmentIdType === 'id') {
-            apiUrl = `http://security/auth/staff/admin-staff/fetch?staffId=${dataId}`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin-staff/fetch?staffId=${dataId}`;
         } else if (appointmentIdType === 'email') {
-            apiUrl = `http://security/auth/staff/admin-staff/fetchStaffByEmail?email=${dataId}`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin-staff/fetchStaffByEmail?email=${dataId}`;
         } else if (appointmentIdType === 'phone') {
-            apiUrl = `http://security/auth/staff/admin-staff/fetchStaffByPhoneNumber?phoneNumber=${dataId}`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin-staff/fetchStaffByPhoneNumber?phoneNumber=${dataId}`;
         } else if (appointmentIdType === 'all') {
-            apiUrl = `http://security/auth/staff/admin-staff/fetchAllStaff`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin-staff/fetchAllStaff`;
         }
     } else if (dataType === 'appointment') {
         if (appointmentSelection === 'single') {
-            apiUrl = `http://security/auth/appointment/admin-staff/fetch?appointmentNumber=${appointmentNumber}`;
+            apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetch?appointmentNumber=${appointmentNumber}`;
         } else if (appointmentSelection === 'list') {
             if (appointmentListType === 'all') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAllAppointments`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAllAppointments`;
             } else if (appointmentListType === 'singleDate') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsBySingleDate?date=${singleDate}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsBySingleDate?date=${singleDate}`;
             } else if (appointmentListType === 'doubleDate') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByDoubleDates?date1=${startDate}&date2=${endDate}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByDoubleDates?date1=${startDate}&date2=${endDate}`;
             } else if (appointmentListType === 'status') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByAppointmentStatus?appointmentStatus=${appointmentStatus}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByAppointmentStatus?appointmentStatus=${appointmentStatus}`;
             } else if (appointmentListType === 'type') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByAppointmentType?appointmentType=${appointmentType}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByAppointmentType?appointmentType=${appointmentType}`;
             } else if (appointmentListType === 'today') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsForToday`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsForToday`;
             } else if (appointmentListType === 'typeAndSingleDate') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByAppointmentTypeAndSingleDate?appointmentType=${appointmentType}&date=${singleDate}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByAppointmentTypeAndSingleDate?appointmentType=${appointmentType}&date=${singleDate}`;
             } else if (appointmentListType === 'typeAndDoubleDate') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByAppointmentTypeAndDoubleDates?appointmentType=${appointmentType}&date1=${startDate}&date2=${endDate}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByAppointmentTypeAndDoubleDates?appointmentType=${appointmentType}&date1=${startDate}&date2=${endDate}`;
             } else if (appointmentListType === 'statusAndSingleDate') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByAppointmentStatusAndSingleDate?appointmentStatus=${appointmentStatus}&date=${singleDate}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByAppointmentStatusAndSingleDate?appointmentStatus=${appointmentStatus}&date=${singleDate}`;
             } else if (appointmentListType === 'statusAndDoubleDate') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByAppointmentStatusAndDoubleDates?appointmentStatus=${appointmentStatus}&date1=${startDate}&date2=${endDate}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByAppointmentStatusAndDoubleDates?appointmentStatus=${appointmentStatus}&date1=${startDate}&date2=${endDate}`;
             } else if (appointmentListType === 'statusForToday') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByStatusForToday?appointmentStatus=${appointmentStatus}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByStatusForToday?appointmentStatus=${appointmentStatus}`;
             } else if (appointmentListType === 'typeForToday') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByTypeForToday?appointmentType=${appointmentType}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByTypeForToday?appointmentType=${appointmentType}`;
             } else if (appointmentListType === 'statusAndType') {
-                apiUrl = `http://security/auth/appointment/admin-staff/fetchAppointmentsByStatusAndTypeForToday?appointmentStatus=${appointmentStatus}&appointmentType=${appointmentType}`;
+                apiUrl = `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin-staff/fetchAppointmentsByStatusAndTypeForToday?appointmentStatus=${appointmentStatus}&appointmentType=${appointmentType}`;
             }
         }
     }
@@ -777,7 +777,7 @@ async function updateClient() {
     const clientState = document.getElementById('editClientState').value;
     const clientPostalCode = document.getElementById('editClientPostalCode').value;
 
-    const apiBaseUrlClient = 'http://security/auth/client/admin';
+    const apiBaseUrlClient = 'http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/client/admin';
 
     const clientData = {
         clientId: clientId,
@@ -835,7 +835,7 @@ async function updateStaff() {
     const staffState = document.getElementById('editStaffState').value;
     const staffPostalCode = document.getElementById('editStaffPostalCode').value;
 
-    const apiBaseUrlStaff = 'http://security/auth/staff/admin';
+    const apiBaseUrlStaff = 'http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin';
 
     const staffData = {
         staffId: staffId,
@@ -896,7 +896,7 @@ async function updateAppointment() {
     const appointmentState = document.getElementById('editAppointmentState').value;
     const appointmentPostalCode = document.getElementById('editAppointmentPostalCode').value;
 
-    const apiBaseUrlAppointment = 'http://security/auth/appointment/admin';
+    const apiBaseUrlAppointment = 'http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin';
 
     const appointmentData = {
         appointmentNumber: appointmentNumber,
@@ -963,9 +963,9 @@ function confirmDeleteAppointment(appointmentNumber) {
 
 async function deleteData(type, id) {
     const apiBaseUrl = {
-        client: `http://security/auth/client/admin/delete?clientId=${id}`,
-        staff: `http://security/auth/staff/admin/delete?staffId=${id}`,
-        appointment: `http://security/auth/appointment/admin/delete?appointmentNumber=${id}`
+        client: `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/client/admin/delete?clientId=${id}`,
+        staff: `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/staff/admin/delete?staffId=${id}`,
+        appointment: `http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin/delete?appointmentNumber=${id}`
     };
 
     const loadingOverlay = document.getElementById('loading');
@@ -1021,7 +1021,7 @@ async function createAppointment() {
     const appointmentState = document.getElementById('createAppointmentState').value;
     const appointmentPostalCode = document.getElementById('createAppointmentPostalCode').value;
 
-    const apiBaseUrlAppointment = 'http://security/auth/appointment/admin';
+    const apiBaseUrlAppointment = 'http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/appointment/admin';
 
     const appointmentData = {
         clientId: clientId,

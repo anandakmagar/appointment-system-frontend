@@ -6,7 +6,7 @@ document.getElementById('resetPasswordForm').addEventListener('submit', async fu
     const newPassword = document.getElementById('newPassword').value;
 
     try {
-        const response = await fetch('http://localhost:8090/auth/change-password', {
+        const response = await fetch('https://dashboard.heroku.com/apps/eureka-server-ms/auth/change-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -16,9 +16,9 @@ document.getElementById('resetPasswordForm').addEventListener('submit', async fu
 
         if (response.ok) {
             alert('Password successfully reset. Please log in with your new password.');
-            window.location.href = '../login/login.html';
+            window.location.href = 'login.html';
         } else {
-            const errorResponse = await response.json(); // Assuming the server sends a JSON response for errors
+            const errorResponse = await response.json();
             console.error('Failed to change password:', response.status, response.statusText, errorResponse);
             document.getElementById('errorMessage').textContent = errorResponse.message || 'Failed to change password. Please check your credentials and reset code.';
             document.getElementById('errorMessage').style.display = 'block';

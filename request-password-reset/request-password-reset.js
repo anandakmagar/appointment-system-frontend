@@ -3,7 +3,7 @@ document.getElementById('requestResetForm').addEventListener('submit', async fun
     const email = document.getElementById('email').value;
 
     try {
-        const response = await fetch(`http://localhost:8090/auth/send-reset-code?email=${encodeURIComponent(email)}`, {
+        const response = await fetch(`http://https://dashboard.heroku.com/apps/eureka-server-ms/auth/send-reset-code?email=${encodeURIComponent(email)}`, {
             method: 'GET'
         });
 
