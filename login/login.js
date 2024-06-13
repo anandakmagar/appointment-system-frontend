@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('https://dashboard.heroku.com/apps/eureka-server-ms/auth/login', {
+        const response = await fetch('https://security-ms-7da3bed56834.herokuapp.com/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

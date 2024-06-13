@@ -4,7 +4,7 @@ body {
     background-color: #f0f2f5;
     display: flex;
     justify-content: center;
-    background: url('../login/appointment.jpg') no-repeat center center fixed;
+    background: url('appointment.jpg') no-repeat center center fixed;
     align-items: center;
     height: 100vh;
     margin: 0;
