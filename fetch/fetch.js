@@ -341,6 +341,7 @@ async function fetchAppointments(type, id) {
     try {
         const response = await fetch(apiUrl, {
             method: 'GET',
+    mode: 'no-cors',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -609,6 +610,7 @@ async function fetchData() {
     try {
         const response = await fetch(apiUrl, {
             method: 'GET',
+    mode: 'no-cors',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
