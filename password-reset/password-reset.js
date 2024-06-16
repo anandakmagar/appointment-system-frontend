@@ -6,7 +6,7 @@ document.getElementById('resetPasswordForm').addEventListener('submit', async fu
     const newPassword = document.getElementById('newPassword').value;
 
     try {
-        const response = await fetch('https://security-ms-7da3bed56834.herokuapp.com/auth/change-password', {
+        const response = await fetch('https://security-ms-8fc9ab78bc2c.herokuapp.com/auth/change-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

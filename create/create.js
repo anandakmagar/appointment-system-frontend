@@ -38,7 +38,7 @@ async function createUser(type) {
     let payload = {};
 
     if (type === 'client') {
-        apiUrl = 'https://security-ms-7da3bed56834.herokuapp.com/auth/client/admin/create';
+        apiUrl = 'https://security-ms-59cfc31741b3.herokuapp.com/auth/client/admin/create';
         payload = {
             name: document.getElementById('clientName').value,
             email: document.getElementById('clientEmail').value,
@@ -51,7 +51,7 @@ async function createUser(type) {
             }
         };
     } else if (type === 'staff') {
-        apiUrl = 'https://security-ms-7da3bed56834.herokuapp.com/auth/staff/admin/create';
+        apiUrl = 'https://security-ms-59cfc31741b3.herokuapp.com/auth/staff/admin/create';
         payload = {
             name: document.getElementById('staffName').value,
             email: document.getElementById('staffEmail').value,
@@ -64,7 +64,7 @@ async function createUser(type) {
             }
         };
     } else if (type === 'admin') {
-        apiUrl = 'https://security-ms-7da3bed56834.herokuapp.com/auth/admin/registerAdmin';
+        apiUrl = 'https://security-ms-59cfc31741b3.herokuapp.com/auth/admin/registerAdmin';
         payload = {
             name: document.getElementById('adminName').value,
             email: document.getElementById('adminEmail').value,
